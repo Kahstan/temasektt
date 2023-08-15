@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import Sidebar from './Components/Sidebar';
+import axios from 'axios'
+
 
 function App() {
+  const [data, setData] = useState([])
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const fetch = async () => {
+      let res = await axios.get("https://api.apis.guru/v2/providers.json")
+      let data = res.data
+      console.log(res.data)
+      setData(data)
+    }
+    fetch()
+  }, [])
+
+  const toggleSideBar = (e) => {
+    e.preventDefault();
+    setIsOpen(!isOpen)
+    console.log("clicked toggle sidebar")
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="button" onClick={toggleSideBar}>Toggle Sidebar</button>
+      {isOpen ? <Sidebar data={data} /> :
+        null}
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #868686;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+li {
+    list-style: none;
+}
+
+.dropdown {
+    padding: 10px;
+    border-color: black;
+    border-style: solid;
+    margin: 10px;
+}
+
+.details {
+  padding: 10px;
+  border-color: black;
+  border-style: dotted;
+  margin: 10px;
+}
