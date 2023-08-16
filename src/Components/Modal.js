@@ -22,13 +22,13 @@ const Modal = ({ webApis, setModalOpen }) => {
     } else {
       setContact("");
     }
-  });
+  }, [webApis]);
 
   return (
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <div className={styles.titleContent}>
-          <img src={logo} className={styles.logo} />
+          <img src={logo} className={styles.logo} alt="logo" />
           <span>{webApis[0]?.info?.title}</span>
         </div>
         <div className={styles.content}>

@@ -38,7 +38,7 @@ const Sidebar = ({ data }) => {
   useEffect(() => {
     setCurrentTitle(webApis[0]?.info?.title);
     setSmallLogo(webApis[0]?.info["x-logo"].url);
-  }, [toggleDropDown]);
+  }, [webApis]);
 
   const toggleModal = (e) => {
     e.preventDefault();
@@ -72,16 +72,17 @@ const Sidebar = ({ data }) => {
                     ? arrowLeft
                     : arrow
                 }
+                alt="arrow placeholder"
               ></img>
             </li>
 
-            {dropDownOpen && currentProvider == provider ? (
+            {dropDownOpen && currentProvider === provider ? (
               <ul className={styles.details} onClick={toggleModal}>
-                <img src={smallLogo} className={styles.logo} />
+                <img src={smallLogo} className={styles.logo} alt="logo" />
                 <span className={styles.title}>{webApis[0]?.info?.title}</span>
               </ul>
             ) : null}
-            {modalOpen && currentProvider == provider ? (
+            {modalOpen && currentProvider === provider ? (
               <Modal
                 webApis={webApis}
                 currentProvider={currentProvider}
