@@ -1,30 +1,84 @@
 .sidebar {
+  display: block;
   height: 100%;
-  width: 20%;
+  width: 45%;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #868686;
+  background-color: #2e5773;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 10px;
+  color: whitesmoke;
+  border-left: solid 1px #03a9f4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .dropdown {
-    padding: 10px;
-    border-color: black;
-    border-style: solid;
-    margin: 10px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 10px 0px;
+}
+
+.dropdownOpen {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #112a3c;
+  margin: 10px 10px 0px;
+}
+
+.dropdown:focus,
+.dropdown:hover {
+  background-color: #112a3c;
 }
 
 .details {
+  cursor: pointer;
   padding: 10px;
-  border-color: black;
-  border-style: dotted;
-  margin: 10px;
+  background-color: #112a3c;
+  margin: 0 10px 10px;
+}
+
+.arrowDown {
+  color: #d8d8d8;
+  float: right;
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+
+.logo {
+  max-height: 30px;
+  padding-right: 10px;
+}
+
+.title {
+  display: relative;
+  font-size: medium;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.arrow {
+  position: relative;
+  float: right;
+  max-height: 30px;
+}
+
+.arrowUp {
+  position: relative;
+  float: right;
+  max-height: 30px;
+  fill: azure;
 }
