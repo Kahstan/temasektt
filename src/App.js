@@ -17,6 +17,7 @@ function App() {
     fetch();
   }, []);
 
+  // sidebar toggle
   const toggleSideBar = (e) => {
     e.preventDefault();
     setIsOpen(!isOpen);
